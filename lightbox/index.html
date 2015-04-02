@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <!--<base href="/web"/>-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
+    <title>Image Classification</title>
+
+ 
+    <!-- stylesheets for bootstrap and lightbox -->
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://compact.github.io/angular-bootstrap-lightbox/lib/loading-bar.css">
+    <link rel="stylesheet" type="text/css" href="http://compact.github.io/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-touch.js"></script>
+
+    <!-- scripts for loading the lightbox image viewer -->
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="http://compact.github.io/angular-bootstrap-lightbox/lib/loading-bar.js"></script>
+    <script src="http://bouil.github.io/angular-google-chart/ng-google-chart.js"></script>
+    <script src="http://compact.github.io/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js"></script>
+
+    <script src="demo1.js"></script>
+    
+</head>
+<body>
+<div>
+  <ul id="gallery" ng-app="demo1" ng-controller="GalleryCtrl">
+  <li ng-repeat="image in images">
+    <a ng-click="openLightboxModal($index)"
+       ng-mouseover="hoverIn($index)"
+       ng-mouseleave="hoverOut($index)" >
+      <img ng-src="{{image.thumbUrl}}" class="img-thumbnail" alt="">
+      <div ng-show="isHover($index)"> hello </div>
+    </a>
+  </li>
+</ul>
+</div>
+</body>
+</html>
